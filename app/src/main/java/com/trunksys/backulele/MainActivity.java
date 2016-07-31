@@ -301,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
 
                     try {
                         mp.start();
-                        Thread.sleep(20);
+                        //Thread.sleep(1);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
