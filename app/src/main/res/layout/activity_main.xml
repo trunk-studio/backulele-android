@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.trunksys.backulele.MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="一隻有想法的烏克麗麗！ DEMO" />
+
+        <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:rowCount="6"
+            android:columnCount="5" >
+
+            <Button
+                android:text="C6" android:id="@+id/play_C6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_C6_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_C6_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_C6_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_C6_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <Button
+                android:text="F" android:id="@+id/play_F"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_F_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_F_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_F_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_F_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <Button
+                android:text="Am" android:id="@+id/play_Am"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_Am_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_Am_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_Am_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_Am_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <Button
+                android:text="Em" android:id="@+id/play_Em"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_Em_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_Em_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_Em_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_Em_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <Button
+                android:text="C" android:id="@+id/play_C"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_C_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_C_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_C_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_C_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <Button
+                android:text="G" android:id="@+id/play_G"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_G_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_G_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_G_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button android:text="|" android:id="@+id/play_G_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
