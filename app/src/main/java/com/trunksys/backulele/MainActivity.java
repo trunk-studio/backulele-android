@@ -1,23 +1,19 @@
 package com.trunksys.backulele;
 
-import android.bluetooth.BluetoothSocket;
-import android.content.Intent;
-import android.media.MediaPlayer;
-import android.media.AudioManager;
-import android.net.Uri;
-import android.view.MotionEvent;
-import android.widget.Button;
-import android.view.View;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothSocket;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.AsyncTask;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.content.Context;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.Random;
 import java.util.Set;
 import java.util.UUID;
 
@@ -30,132 +26,16 @@ public class MainActivity extends AppCompatActivity {
     private Button c, c_1, c_2, c_3, c_4;
     private Button g, g_1, g_2, g_3, g_4;
 
-    //private MediaPlayer mp = new MediaPlayer();
-
-    private BluetoothAdapter bluetooth;
-
-    static final UUID BT_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
-
-/*
-    private static final String prefix = "/storage/sdcard0/ukulele/RR3-RR3-major-downstroke-rr3-";
-
-    private static final String[] chords = {
-            "1A7J", "1O8J", "2V25", "3D5O", "4CYA", "4T53", "4VP9", "621Q", "6FAG", "6LEG",
-            "6TPH", "7UYM", "8AAF", "8CMM", "8JLM", "AKZI", "B50H", "BMYK", "CFVE", "CTQQ",
-            "D59O", "D6GM", "DSIW", "EJOB", "EQ6K", "EZTP", "F5Y8", "HWZX", "IAQK", "J5RH",
-            "JRCT", "KCLL", "KHOJ", "LKXQ", "MDUK", "NXUQ", "ORSA", "PCM3", "QDT6", "QPE1",
-            "QUU6", "QV8A", "VWBS", "WN03", "XMZG", "Y4LA", "ZQ7W", "ZTSZ", "ZUN5", "ZUV2"
-    };
-
-    private static final String postfix = ".wav";
-*/
-
-    private static final String prefix = "/storage/sdcard0/ukulele/";
-
-    private static final String[] chords = {
-            "C6_1", "C6_2", "C6_3", "C6_4",
-            "F_1", "F_2", "F_3", "F_4",
-            "Am_1", "Am_2", "Am_3", "Am_4",
-            "Em_1", "Em_2", "Em_3", "Em_4",
-            "C_1", "C_2", "C_3", "C_4",
-            "G_1", "G_2", "G_3", "G_4"
-    };
-
-    private static final String postfix = ".mp3";
+    private SoundPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bluetooth = BluetoothAdapter.getDefaultAdapter();
+        player = new SoundPlayer(getBaseContext());
 
-        if (!bluetooth.isEnabled()) {
-            bluetooth.enable();
-        }
-
-        Set<BluetoothDevice> paired = bluetooth.getBondedDevices();
-
-        BluetoothDevice device = null;
-
-        if (paired.size() > 0) {
-            for (BluetoothDevice d : paired) {
-                if (d.getName().equals("HC-05")) {
-                    device = d;
-                    break;
-                }
-            }
-        }
-
-        try {
-            BluetoothSocket socket = device.createInsecureRfcommSocketToServiceRecord(BT_UUID);
-
-            socket.connect();
-
-            final OutputStream out = socket.getOutputStream();
-            final InputStream in = socket.getInputStream();
-
-            out.write("CONNECTED.\n".getBytes());
-
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-
-                    while (true){
-                        try {
-
-                            byte ch;
-                            int i = 0;
-
-                            StringBuilder bcmd = new StringBuilder();
-
-                            while((ch=(byte)in.read()) != '#'){
-                                bcmd.append((char)ch);
-                            }
-
-                            final String cmd = bcmd.toString();
-
-                            if (cmd.startsWith("PLAY_")) {
-                                String chord = cmd.substring("PLAY_".length());
-                                playSound(chord);
-                                //out.write(("PLAYING "+chord+"\n").getBytes());
-                            }
-                            else if (cmd.startsWith("EVENT_")) {
-                                char[] matrix = cmd.substring("EVENT_".length()).toCharArray();
-
-                                if (matrix[4]=='1') {
-                                    playSound("C6_4");
-                                }
-
-                                if (matrix[3]=='1') {
-                                    playSound("C6_3");
-                                }
-
-                                if (matrix[2]=='1') {
-                                    playSound("C6_2");
-                                }
-
-                                if (matrix[1]=='1') {
-                                    playSound("C6_1");
-                                }
-                            }
-
-                            //out.write(cmd.getBytes());
-                            //out.write('\n');
-                            out.write("OK.\n".getBytes());
-
-                            Thread.sleep(100);
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            }).start();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
+        new Thread(new BluetoothIO(player)).start();
 
         c6 = (Button) findViewById(R.id.play_C6);
         c6.setOnClickListener(generateListener(new String[] {"C6_4", "C6_3", "C6_2", "C6_1"}));
@@ -224,12 +104,69 @@ public class MainActivity extends AppCompatActivity {
         g_4.setOnClickListener(generateListener("G_4"));
     }
 
-    private void playSound(String chord) {
+    private View.OnClickListener generateListener(final String chord) {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                player.play(chord);
+            }
+        };
+    }
+
+    private View.OnClickListener generateListener(final String[] chords) {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for(String chord : chords) {
+                    player.play(chord);
+                }
+            }
+        };
+    }
+}
+
+class SoundPlayer {
+    //private MediaPlayer mp = new MediaPlayer();
+
+/*
+    private static final String prefix = "/storage/sdcard0/ukulele/RR3-RR3-major-downstroke-rr3-";
+
+    private static final String[] chords = {
+            "1A7J", "1O8J", "2V25", "3D5O", "4CYA", "4T53", "4VP9", "621Q", "6FAG", "6LEG",
+            "6TPH", "7UYM", "8AAF", "8CMM", "8JLM", "AKZI", "B50H", "BMYK", "CFVE", "CTQQ",
+            "D59O", "D6GM", "DSIW", "EJOB", "EQ6K", "EZTP", "F5Y8", "HWZX", "IAQK", "J5RH",
+            "JRCT", "KCLL", "KHOJ", "LKXQ", "MDUK", "NXUQ", "ORSA", "PCM3", "QDT6", "QPE1",
+            "QUU6", "QV8A", "VWBS", "WN03", "XMZG", "Y4LA", "ZQ7W", "ZTSZ", "ZUN5", "ZUV2"
+    };
+
+    private static final String postfix = ".wav";
+*/
+
+    private static final String prefix = "/storage/sdcard0/ukulele/";
+
+    private static final String[] chords = {
+            "C6_1", "C6_2", "C6_3", "C6_4",
+            "F_1", "F_2", "F_3", "F_4",
+            "Am_1", "Am_2", "Am_3", "Am_4",
+            "Em_1", "Em_2", "Em_3", "Em_4",
+            "C_1", "C_2", "C_3", "C_4",
+            "G_1", "G_2", "G_3", "G_4"
+    };
+
+    private static final String postfix = ".mp3";
+
+    private Context context;
+
+    public SoundPlayer(Context context) {
+        this.context = context;
+    }
+
+    public void play(String chord) {
         String filePath = prefix;
         filePath += chord;
         filePath += postfix;
 
-        MediaPlayer mp = MediaPlayer.create(getBaseContext(), Uri.parse(filePath));
+        MediaPlayer mp = MediaPlayer.create(context, Uri.parse(filePath));
 
         mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -244,71 +181,154 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+}
 
-    private View.OnClickListener generateListener(final String chord) {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+class BluetoothIO implements Runnable {
 
-                String filePath = prefix;
+    static final UUID BT_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
-                filePath += chord;
+    private SoundPlayer player;
 
-                filePath += postfix;
+    private BluetoothAdapter bluetooth = null;
 
-                MediaPlayer mp = MediaPlayer.create(getBaseContext(), Uri.parse(filePath));
+    private OutputStream out = null;
 
-                mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        mp.release();
-                    }
-                });
+    private InputStream in = null;
 
-                try {
-                    mp.start();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+    BluetoothSocket socket = null;
 
+    private long t1 = System.currentTimeMillis();
+    private long t2 = System.currentTimeMillis();
+    private long t3 = System.currentTimeMillis();
+    private long t4 = System.currentTimeMillis();
 
-            }
-        };
+    public BluetoothIO(SoundPlayer player) {
+
+        this.player = player;
+
+        bluetooth = BluetoothAdapter.getDefaultAdapter();
+
+        // Force enable bluetooth
+        if (!bluetooth.isEnabled()) {
+            bluetooth.enable();
+        }
+
     }
 
-    private View.OnClickListener generateListener(final String[] chords) {
+    @Override
+    public void run() {
+        Set<BluetoothDevice> paired = bluetooth.getBondedDevices();
 
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        BluetoothDevice device = null;
 
-                for(String chord : chords) {
-
-                    String filePath = prefix;
-
-                    filePath += chord;
-
-                    filePath += postfix;
-
-                    MediaPlayer mp = MediaPlayer.create(getBaseContext(), Uri.parse(filePath));
-
-                    mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            mp.release();
-                        }
-                    });
-
-                    try {
-                        mp.start();
-                        //Thread.sleep(1);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-
+        if (paired.size() > 0) {
+            for (BluetoothDevice d : paired) {
+                if (d.getName().equals("HC-05")) {
+                    device = d;
+                    break;
                 }
             }
-        };
+        }
+
+        while (true) {
+            try {
+
+                if (socket == null) {
+                    socket = device.createInsecureRfcommSocketToServiceRecord(BT_UUID);
+                }
+
+                if (!socket.isConnected()) {
+                    socket.connect();
+                    out = socket.getOutputStream();
+                    in = socket.getInputStream();
+                    out.write("CONNECTED.\n".getBytes());
+                }
+
+                processIO();
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void processIO() throws Exception {
+        if (in.available() > 0) {
+            long now = System.currentTimeMillis();
+            boolean t1a = (now - t1) >= 200;
+            boolean t2a = (now - t2) >= 200;
+            boolean t3a = (now - t3) >= 200;
+            boolean t4a = (now - t4) >= 200;
+
+            byte ch;
+
+            StringBuilder bcmd = new StringBuilder();
+
+            while ((ch = (byte) in.read()) != '#') {
+                bcmd.append((char) ch);
+            }
+
+            final String cmd = bcmd.toString();
+
+            if (cmd.startsWith("PLAY_")) {
+                String chord = cmd.substring("PLAY_".length());
+                player.play(chord);
+                //out.write(("PLAYING "+chord+"\n").getBytes());
+            } else if (cmd.startsWith("EVENT_")) {
+                char[] matrix = cmd.substring("EVENT_".length()).toCharArray();
+
+                String chord;
+
+                switch (matrix[0]) {
+                    case '0':
+                        chord = "C6";
+                        break;
+                    case '1':
+                        chord = "F";
+                        break;
+                    case '2':
+                        chord = "Am";
+                        break;
+                    case '3':
+                        chord = "Em";
+                        break;
+                    case '4':
+                        chord = "C";
+                        break;
+                    case '5':
+                        chord = "G";
+                        break;
+                    default:
+                        chord = "C6";
+                }
+
+                if (matrix[4] == '1' && t4a) {
+                    player.play(chord + "_4");
+                    t4 = System.currentTimeMillis();
+                }
+
+                if (matrix[3] == '1' && t3a) {
+                    player.play(chord + "_3");
+                    t3 = System.currentTimeMillis();
+                }
+
+                if (matrix[2] == '1' && t2a) {
+                    player.play(chord + "_2");
+                    t2 = System.currentTimeMillis();
+                }
+
+                if (matrix[1] == '1' && t1a) {
+                    player.play(chord + "_1");
+                    t1 = System.currentTimeMillis();
+                }
+            }
+
+            //out.write(cmd.getBytes());
+            //out.write('\n');
+            out.write("OK.\n".getBytes());
+
+            Thread.sleep(5);
+        }
     }
 }
 
