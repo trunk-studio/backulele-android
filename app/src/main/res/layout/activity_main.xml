@@ -9,17 +9,286 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.trunksys.backulele.MainActivity">
 
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <!--android:background="@drawable/ukulele">-->
+
+        <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageView"
+        android:src="@drawable/ukulele"
+        android:scaleType="fitCenter" />
+
+        <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:rowCount="10"
+            android:columnCount="4">
+
+            <Button
+                android:text="A" android:id="@+id/play_MA_DOWN_A"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="A" android:id="@+id/play_MA_UP_A"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="A" android:id="@+id/play_MN_DOWN_A"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="A" android:id="@+id/play_MN_UP_A"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+
+            <Button
+                android:text="B" android:id="@+id/play_MA_DOWN_B"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="B" android:id="@+id/play_MA_UP_B"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="B" android:id="@+id/play_MN_DOWN_B"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="B" android:id="@+id/play_MN_UP_B"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+
+            <Button
+                android:text="C" android:id="@+id/play_MA_DOWN_C"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="C" android:id="@+id/play_MA_UP_C"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="C" android:id="@+id/play_MN_DOWN_C"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="C" android:id="@+id/play_MN_UP_C"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+
+            <Button
+                android:text="C#" android:id="@+id/play_MA_DOWN_CS"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="C#" android:id="@+id/play_MA_UP_CS"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="C#" android:id="@+id/play_MN_DOWN_CS"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="C#" android:id="@+id/play_MN_UP_CS"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+
+            <Button
+                android:text="D" android:id="@+id/play_MA_DOWN_D"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="D" android:id="@+id/play_MA_UP_D"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="D" android:id="@+id/play_MN_DOWN_D"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="D" android:id="@+id/play_MN_UP_D"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+
+            <Button
+                android:text="E" android:id="@+id/play_MA_DOWN_E"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="E" android:id="@+id/play_MA_UP_E"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="E" android:id="@+id/play_MN_DOWN_E"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="E" android:id="@+id/play_MN_UP_E"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+
+            <Button
+                android:text="F" android:id="@+id/play_MA_DOWN_F"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="F" android:id="@+id/play_MA_UP_F"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="F" android:id="@+id/play_MN_DOWN_F"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="F" android:id="@+id/play_MN_UP_F"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+
+            <Button
+                android:text="F#" android:id="@+id/play_MA_DOWN_FS"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="F#" android:id="@+id/play_MA_UP_FS"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="F#" android:id="@+id/play_MN_DOWN_FS"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="F#" android:id="@+id/play_MN_UP_FS"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+
+            <Button
+                android:text="G" android:id="@+id/play_MA_DOWN_G"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="G" android:id="@+id/play_MA_UP_G"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="G" android:id="@+id/play_MN_DOWN_G"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="G" android:id="@+id/play_MN_UP_G"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+
+            <Button
+                android:text="G#" android:id="@+id/play_MA_DOWN_GS"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="G#" android:id="@+id/play_MA_UP_GS"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="G#" android:id="@+id/play_MN_DOWN_GS"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+            <Button
+                android:text="G#" android:id="@+id/play_MN_UP_GS"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:alpha="0.5" />
+
+        </GridLayout>
 
         <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:rowCount="6"
-            android:columnCount="5" >
+            android:columnCount="5"
+            android:visibility="invisible">
 
             <Button
                 android:text="C6" android:id="@+id/play_C6"
@@ -183,6 +452,6 @@
 
         </GridLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>
