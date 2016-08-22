@@ -11,8 +11,8 @@
 
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:orientation="vertical">
         <!--android:background="@drawable/ukulele">-->
 
@@ -24,431 +24,520 @@
         android:scaleType="fitCenter" />
 
         <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="150dp"
             android:orientation="horizontal"
-            android:rowCount="10"
-            android:columnCount="4">
+            android:rowCount="1"
+            android:columnCount="5">
 
+            <!-- C -->
             <Button
-                android:text="A" android:id="@+id/play_MA_DOWN_A"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="A" android:id="@+id/play_MA_UP_A"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="A" android:id="@+id/play_MN_DOWN_A"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="A" android:id="@+id/play_MN_UP_A"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
+                android:text="C" android:id="@+id/play_C"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:textSize="13dp"
                 android:alpha="0.5" />
 
+            <!-- G -->
             <Button
-                android:text="B" android:id="@+id/play_MA_DOWN_B"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="B" android:id="@+id/play_MA_UP_B"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="B" android:id="@+id/play_MN_DOWN_B"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="B" android:id="@+id/play_MN_UP_B"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
+                android:text="G" android:id="@+id/play_G"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:textSize="13dp"
                 android:alpha="0.5" />
 
+            <!-- Am -->
             <Button
-                android:text="C" android:id="@+id/play_MA_DOWN_C"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="C" android:id="@+id/play_MA_UP_C"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="C" android:id="@+id/play_MN_DOWN_C"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="C" android:id="@+id/play_MN_UP_C"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
+                android:text="Am" android:id="@+id/play_Am"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:textSize="13dp"
                 android:alpha="0.5" />
 
+            <!-- Em -->
             <Button
-                android:text="C#" android:id="@+id/play_MA_DOWN_CS"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="C#" android:id="@+id/play_MA_UP_CS"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="C#" android:id="@+id/play_MN_DOWN_CS"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="C#" android:id="@+id/play_MN_UP_CS"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
+                android:text="Em" android:id="@+id/play_Em"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:textSize="13dp"
                 android:alpha="0.5" />
 
+            <!-- F -->
             <Button
-                android:text="D" android:id="@+id/play_MA_DOWN_D"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="D" android:id="@+id/play_MA_UP_D"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="D" android:id="@+id/play_MN_DOWN_D"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="D" android:id="@+id/play_MN_UP_D"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
+                android:text="F" android:id="@+id/play_F"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:textSize="13dp"
                 android:alpha="0.5" />
 
-            <Button
-                android:text="E" android:id="@+id/play_MA_DOWN_E"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="E" android:id="@+id/play_MA_UP_E"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="E" android:id="@+id/play_MN_DOWN_E"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="E" android:id="@+id/play_MN_UP_E"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
 
-            <Button
-                android:text="F" android:id="@+id/play_MA_DOWN_F"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="F" android:id="@+id/play_MA_UP_F"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="F" android:id="@+id/play_MN_DOWN_F"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="F" android:id="@+id/play_MN_UP_F"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
+            <!--<Button-->
+                <!--android:text="A" android:id="@+id/play_MA_DOWN_A"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="A" android:id="@+id/play_MA_UP_A"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="A" android:id="@+id/play_MN_DOWN_A"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="A" android:id="@+id/play_MN_UP_A"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
 
-            <Button
-                android:text="F#" android:id="@+id/play_MA_DOWN_FS"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="F#" android:id="@+id/play_MA_UP_FS"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="F#" android:id="@+id/play_MN_DOWN_FS"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="F#" android:id="@+id/play_MN_UP_FS"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
+            <!--<Button-->
+                <!--android:text="B" android:id="@+id/play_MA_DOWN_B"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="B" android:id="@+id/play_MA_UP_B"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="B" android:id="@+id/play_MN_DOWN_B"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="B" android:id="@+id/play_MN_UP_B"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
 
-            <Button
-                android:text="G" android:id="@+id/play_MA_DOWN_G"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="G" android:id="@+id/play_MA_UP_G"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="G" android:id="@+id/play_MN_DOWN_G"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="G" android:id="@+id/play_MN_UP_G"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
+            <!--<Button-->
+                <!--android:text="C" android:id="@+id/play_MA_DOWN_C"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="C" android:id="@+id/play_MA_UP_C"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="C" android:id="@+id/play_MN_DOWN_C"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="C" android:id="@+id/play_MN_UP_C"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
 
-            <Button
-                android:text="G#" android:id="@+id/play_MA_DOWN_GS"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="G#" android:id="@+id/play_MA_UP_GS"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="G#" android:id="@+id/play_MN_DOWN_GS"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
-            <Button
-                android:text="G#" android:id="@+id/play_MN_UP_GS"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:alpha="0.5" />
+            <!--<Button-->
+                <!--android:text="C#" android:id="@+id/play_MA_DOWN_CS"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="C#" android:id="@+id/play_MA_UP_CS"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="C#" android:id="@+id/play_MN_DOWN_CS"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="C#" android:id="@+id/play_MN_UP_CS"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+
+            <!--<Button-->
+                <!--android:text="D" android:id="@+id/play_MA_DOWN_D"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="D" android:id="@+id/play_MA_UP_D"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="D" android:id="@+id/play_MN_DOWN_D"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="D" android:id="@+id/play_MN_UP_D"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+
+            <!--<Button-->
+                <!--android:text="E" android:id="@+id/play_MA_DOWN_E"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="E" android:id="@+id/play_MA_UP_E"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="E" android:id="@+id/play_MN_DOWN_E"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="E" android:id="@+id/play_MN_UP_E"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+
+            <!--<Button-->
+                <!--android:text="F" android:id="@+id/play_MA_DOWN_F"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="F" android:id="@+id/play_MA_UP_F"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="F" android:id="@+id/play_MN_DOWN_F"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="F" android:id="@+id/play_MN_UP_F"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+
+            <!--<Button-->
+                <!--android:text="F#" android:id="@+id/play_MA_DOWN_FS"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="F#" android:id="@+id/play_MA_UP_FS"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="F#" android:id="@+id/play_MN_DOWN_FS"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="F#" android:id="@+id/play_MN_UP_FS"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+
+            <!--<Button-->
+                <!--android:text="G" android:id="@+id/play_MA_DOWN_G"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="G" android:id="@+id/play_MA_UP_G"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="G" android:id="@+id/play_MN_DOWN_G"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="G" android:id="@+id/play_MN_UP_G"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+
+            <!--<Button-->
+                <!--android:text="G#" android:id="@+id/play_MA_DOWN_GS"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="G#" android:id="@+id/play_MA_UP_GS"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="G#" android:id="@+id/play_MN_DOWN_GS"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
+            <!--<Button-->
+                <!--android:text="G#" android:id="@+id/play_MN_UP_GS"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp"-->
+                <!--android:alpha="0.5" />-->
 
         </GridLayout>
 
+        <!--<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:rowCount="6"-->
+            <!--android:columnCount="5"-->
+            <!--android:visibility="invisible">-->
+
+            <!--<Button-->
+                <!--android:text="C6" android:id="@+id/play_C6"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_C6_4"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_C6_3"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_C6_2"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_C6_1"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+
+            <!--<Button-->
+                <!--android:text="F" android:id="@+id/play_F"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_F_4"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_F_3"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_F_2"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_F_1"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+
+            <!--<Button-->
+                <!--android:text="Am" android:id="@+id/play_Am"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_Am_4"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_Am_3"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_Am_2"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_Am_1"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+
+            <!--<Button-->
+                <!--android:text="Em" android:id="@+id/play_Em"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_Em_4"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_Em_3"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_Em_2"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_Em_1"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+
+            <!--<Button-->
+                <!--android:text="C" android:id="@+id/play_C"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_C_4"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_C_3"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_C_2"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_C_1"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+
+            <!--<Button-->
+                <!--android:text="G" android:id="@+id/play_G"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_G_4"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_G_3"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_G_2"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<Button android:text="|" android:id="@+id/play_G_1"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12dp" />-->
+
+        <!--</GridLayout>-->
+
         <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="220dp"
             android:orientation="horizontal"
-            android:rowCount="6"
-            android:columnCount="5"
-            android:visibility="invisible">
+            android:rowCount="1"
+            android:columnCount="5">
 
             <Button
-                android:text="C6" android:id="@+id/play_C6"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_C6_4"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_C6_3"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_C6_2"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_C6_1"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
+                android:text="-" android:id="@+id/play_LA"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:textSize="13dp"
+                android:alpha="0.3" />
 
             <Button
-                android:text="F" android:id="@+id/play_F"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_F_4"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_F_3"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_F_2"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_F_1"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
+                android:text="1" android:id="@+id/play_L1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:textSize="13dp"
+                android:alpha="0.3" />
 
             <Button
-                android:text="Am" android:id="@+id/play_Am"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_Am_4"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_Am_3"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_Am_2"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_Am_1"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
+                android:text="2" android:id="@+id/play_L2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:textSize="13dp"
+                android:alpha="0.3" />
 
             <Button
-                android:text="Em" android:id="@+id/play_Em"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_Em_4"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_Em_3"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_Em_2"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content" />
-
-            <Button android:text="|" android:id="@+id/play_Em_1"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
+                android:text="3" android:id="@+id/play_L3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:textSize="13dp"
+                android:alpha="0.3" />
 
             <Button
-                android:text="C" android:id="@+id/play_C"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_C_4"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_C_3"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_C_2"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_C_1"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-
-            <Button
-                android:text="G" android:id="@+id/play_G"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_G_4"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_G_3"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_G_2"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
-
-            <Button android:text="|" android:id="@+id/play_G_1"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="12dp" />
+                android:text="4" android:id="@+id/play_L4"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:textSize="13dp"
+                android:alpha="0.3" />
 
         </GridLayout>
 
